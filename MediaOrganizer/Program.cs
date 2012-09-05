@@ -15,7 +15,11 @@ namespace MediaOrganizer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainScreen());
+
+            MainView view = new MainView();
+            MainController controller = new MainController(view.Model);
+
+            Application.Run(controller.Model.View);
         }
     }
 }
